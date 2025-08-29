@@ -2,7 +2,7 @@ const express = require('express')
 const app = express();
 const port = 3000;
 
-app.listen(port,(error) =>{
+app.listen(3000,(error) =>{
 if(error){
     console.log('deu erro')
     return;

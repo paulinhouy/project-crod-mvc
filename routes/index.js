@@ -4,5 +4,13 @@ const router = Router();
 //get post put delete
 
 router.get("/atendimento",(req,res) => {
-    console.log('entrei no  get')
+    res.send('entrei no  get')
+})
+
+router.post("/atendimento",(req,res) => {
+    res.send('estamos criando o postS')
+})
+
+router.put("/atendimento",(req,res) => {
+    res.send('put atualização')
 })
