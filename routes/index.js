@@ -22,6 +22,12 @@ router.delete("/atendimento",(req,res) => {
         const {id} = req.params;
     res.send('put atualização')
 })
-
+app.listen(3000,(error) =>{
+if(error){
+    console.log('deu erro')
+    return;
+}
+console.log('subiu,show')
+})
 
 module.exports = router;
