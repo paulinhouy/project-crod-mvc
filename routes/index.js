@@ -1,4 +1,4 @@
-const { router} = require('express')
+const { Router} = require('express')
 const router = Router();
 
 //get post put delete
@@ -19,3 +19,6 @@ router.delete("/atendimento",(req,res) => {
         const {id} = req.params;
     res.send('put atualização')
 })
+
+
+module.exports = router;
