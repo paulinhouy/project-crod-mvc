@@ -8,5 +8,6 @@ const conexao = mysql.createConnection({
     password:"",
     database:"atendimentos",
 })
+module.exports = conexao;
 
 
