@@ -1,6 +1,7 @@
 class Tabelas {
     init(conexao){
         this.conexao = conexao;
+        this.criarTabelaAtendientos();
 
     }
         criarTabelaAtendientos(){
@@ -22,6 +23,8 @@ this.conexao.query(sql,(error) => {
             }
             console.log('subiu,show')
         
-})
+    })
         }
-    
+    }
+
+    module.exports = new Tabelas();
