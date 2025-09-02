@@ -1,0 +1,6 @@
+class tabelas {
+    init(conexao){
+        
+    }
+
+}
