@@ -13,16 +13,15 @@ STATUS ENUM("pendente","ativo","cancelado") DEFAULT "ativo"
 )
 
 `
-this.conexao.query(erro){
-            if(error){
-                console.log('deu erro')
+this.conexao.query(sql,(error) => {
+
+    if(error){
+        console.log('deu erro')
                 console.log(error.message)
                 return;
             }
             console.log('subiu,show')
-        }       
-    }
-
-
-
-}
+        
+})
+        }
+    
