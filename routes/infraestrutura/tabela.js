@@ -4,7 +4,15 @@ class Tabelas {
 
     }
         criarTabelaAtendientos(){
-            const sql = 
+    const sql = `CREATE TABLE IF NOT EXISTS atenimentos (
+id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
+DATE DATE,
+service VARCHAR(100),
+cliente VARCHAR(100),
+STATUS ENUM("pendente","ativo","cancelado") DEFAULT "ativo"
+)
+
+`
          }
 
 
