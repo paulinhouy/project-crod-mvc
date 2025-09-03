@@ -12,3 +12,4 @@ class atendimentoController{
         return("deletando atendimento "+ id )
     }
 }
+module.exports = new atendimentoController();
