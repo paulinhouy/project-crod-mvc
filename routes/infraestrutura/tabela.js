@@ -1,11 +1,11 @@
 class Tabelas {
     init(conexao){
         this.conexao = conexao;
-        this.criarTabelaAtendientos();
+        this.criarTabelaAtendimentos();
 
     }
-        criarTabelaAtendientos(){
-    const sql = `CREATE TABLE IF NOT EXISTS atenimentos (
+        criarTabelaAtendimentos(){
+    const sql = `CREATE TABLE IF NOT EXISTS atendimentos (
 id INT NOT NULL AUTO_INCREMENT PRIMARY KEY,
 DATE DATE,
 service VARCHAR(100),
@@ -17,13 +17,13 @@ STATUS ENUM("pendente","ativo","cancelado") DEFAULT "ativo"
 this.conexao.query(sql,(error) => {
 
     if(error){
-        console.log('deu erro')
+        console.log('deu erro aqui no banco')
                 console.log(error.message)
                 return;
             }
             console.log('subiu,show')
         
-    })
+            })
         }
     }
 
