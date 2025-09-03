@@ -21,5 +21,9 @@ router.delete("/atendimento/:id",(req,res) => {
 })
 
 
+module.exports = (app) => {
+  app.use("/", router);
+};
 
-app.use("/", router);
+
+

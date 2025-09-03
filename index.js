@@ -1,10 +1,12 @@
 const express = require('express')
 const app = express();
 const port = 3000;
+const router = require("./routes/index")
 const conexao = require("./routes/infraestrutura/conexao")
 const Tabelas = require("./routes/infraestrutura/tabela")
 
 Tabelas.init(conexao);
+router(app)
 
 
 app.listen(port,(error) =>{
