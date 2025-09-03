@@ -20,10 +20,7 @@ router.delete("/atendimento/:id",(req,res) => {
     res.send(`delete id ${id}`)
 })
 
-
 module.exports = (app) => {
   app.use("/", router);
 };
-
-
 

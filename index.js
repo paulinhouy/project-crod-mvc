@@ -1,12 +1,12 @@
 const express = require('express')
 const app = express();
 const port = 3000;
-const router = require("./routes/index")
+const rotas = require("./routes/index")
 const conexao = require("./routes/infraestrutura/conexao")
 const Tabelas = require("./routes/infraestrutura/tabela")
 
 Tabelas.init(conexao);
-router(app)
+rotas(app)
 
 
 app.listen(port,(error) =>{
@@ -16,3 +16,4 @@ if(error){
 }
 console.log('subiu,show')
 })
+module.exports = rotas;
