@@ -1,23 +1,26 @@
 const {Router} = require('express');
 const router = Router();
+const controllers = require("./controllers/atendimentoController")
 
 //get post put delete
 
 router.get("/atendimento",(req,res) => {
-    res.send('entrei no  get')
+    const resposta = controllers.buscar();
+    res.send(resposta)
 })
 
 router.post("/atendimento",(req,res) => {
-    res.send('estamos criando o postS')
+    const resposta = controllers.post()
+    res.send(resposta)
 })
 
 router.put("/atendimento/:id",(req,res) => {
-    const {id} = req.params;
-    res.send(`put atualização ${id}`)
+     const resposta = controllers.atualizar()
+    res.send(resposta)
 })
 router.delete("/atendimento/:id",(req,res) => {
-        const {id} = req.params;
-    res.send(`delete id ${id}`)
+    const resposta = controllers.delete()
+    res.send(resposta)
 })
 
 module.exports = (app) => {
