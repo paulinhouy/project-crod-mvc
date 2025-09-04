@@ -24,8 +24,6 @@ router.delete("/atendimento/:id",(req,res) => {
     const resposta = controllers.delete(id)
     res.send(resposta)
 })
+module.exports = router;
 
-module.exports = (app) => {
-  app.use("/", router);
-};
 

@@ -1,15 +1,14 @@
-class atendimentoController{
-    buscar(){
-        return("buscando atendimento")
-    }
-      post(){
-        return("adicionando atendimento")
-    }
-      atualizar(){
-        return("atualizando atendimento" + id)
-    }
-      delete(){
-        return("deletando atendimento "+ id )
+module.exports = {
+    buscar: () => {
+        return "Listando atendimentos...";
+    },
+    post: () => {
+        return "Criando atendimento...";
+    },
+    atualizar: (id) => {
+        return `Atualizando atendimento ${id}...`;
+    },
+    delete: (id) => {
+        return `Deletando atendimento ${id}...`;
     }
 }
-module.exports = new atendimentoController();

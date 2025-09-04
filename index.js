@@ -6,7 +6,7 @@ const conexao = require("./routes/infraestrutura/conexao")
 const Tabelas = require("./routes/infraestrutura/tabela")
 
 Tabelas.init(conexao);
-rotas(app)
+app.use(rotas)
 
 
 app.listen(port,(error) =>{
@@ -14,6 +14,6 @@ if(error){
     console.log('deu erro aqui')
     return;
 }
-console.log('subiu,show')
+console.log('servidor rodando na rota 3000')
 })
 module.exports = rotas;
