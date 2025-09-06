@@ -1,6 +1,8 @@
+const atendimentoModel = require("../models/model.js")
+
 module.exports = {
     buscar: () => {
-        return "Listando atendimentos...";
+        return atendimentoModel.listar();
     },
     post: () => {
         return "Criando atendimento...";
