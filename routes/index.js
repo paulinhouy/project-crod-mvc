@@ -9,7 +9,7 @@ router.get("/atendimento",(req,res) => {
     const resposta = controllers.buscar();
     console.log(resposta + "ola")
     res.send(resposta)
-    listaAtendimentos.then(atendimentos = res.status(200).json(atendimentos))
+    listaAtendimentos.then(atendimentos = res.status(200).json(atendimentos)).catch(error => res.status(404))
       return atendimentoModel.listar();
       
 })
