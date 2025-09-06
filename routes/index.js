@@ -5,8 +5,13 @@ const controllers = require("../controllers/atendimentoController.js")
 //get post put delete
 
 router.get("/atendimento",(req,res) => {
+    
     const resposta = controllers.buscar();
+    console.log(resposta + "ola")
     res.send(resposta)
+    listaAtendimentos.then(atendimentos = res.status(200).json(atendimentos))
+      return atendimentoModel.listar();
+      
 })
 
 router.post("/atendimento",(req,res) => {
