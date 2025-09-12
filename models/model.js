@@ -19,7 +19,13 @@ class AtendimentosModel {
     }
     criar(atendimento){
         const sql = `INSERT INTO ATENDIMENTOS SET ?`
-        conexao.query(sql,atendimento,)
+        conexao.query(sql,atendimento, (error,resposta) => {
+            if(error){
+                console.log("erro ao listar")
+                return;
+            }
+
+        })
     }
 }
 
