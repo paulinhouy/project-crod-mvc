@@ -24,6 +24,7 @@ class AtendimentosModel {
                 console.log("erro ao listar")
                 return;
             }
+            console.log("deu bom listar")
 
         })
     }
