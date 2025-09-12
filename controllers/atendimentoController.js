@@ -4,7 +4,7 @@ module.exports = {
     buscar: () => {
         return atendimentoModel.listar();
     },
-    post: () => {
+    post: (novoAtendimento) => {
         return "Criando atendimento...";
     },
     atualizar: (id) => {
