@@ -1,3 +1,4 @@
+const atendimento = require("../routes/index");
 const conexao = require("../routes/infraestrutura/conexao");
 
 class AtendimentosModel {
@@ -15,6 +16,10 @@ class AtendimentosModel {
                 }
             });
         });
+    }
+    criar(atendimento){
+        const sql = `INSERT INTO ATENDIMENTOS SET ?`
+        conexao.query(sql,atendimento,)
     }
 }
 
