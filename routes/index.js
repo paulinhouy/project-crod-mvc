@@ -18,6 +18,7 @@ router.post("/atendimento",(req,res) => {
     const novoAtendimento = req.body;
     const atendimento = controllers.post(novoAtendimento)
     res.send(resposta)
+    atendimento.then(atendimentoCriado => res.status(200).json(atendimentoCriado).catch((error) => res.status(400).json(error.message)))
 })
 
 router.put("/atendimento/:id",(req,res) => {
