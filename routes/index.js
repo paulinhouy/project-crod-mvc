@@ -1,12 +1,13 @@
 const {Router} = require('express');
 const router = Router();
 const controllers = require("../controllers/atendimentoController.js")
+const atendimentoModel = require("../models/model");
 
 //get post put delete
 
 router.get("/atendimento",(req,res) => {
     
-    const resposta = controllers.buscar();
+    const resposta = atendimentoModel.buscar();
     console.log(resposta + "ola")
     res.send(resposta)
     listaAtendimentos.then(atendimentos = res.status(200).json(atendimentos)).catch(error => res.status(404).json(error))
@@ -16,7 +17,7 @@ router.get("/atendimento",(req,res) => {
 
 router.post("/atendimento",(req,res) => {
     const novoAtendimento = req.body;
-    const atendimento = controllers.post(novoAtendimento)
+    const atendimento = atendimentoModel.post(novoAtendimento)
     res.send(resposta)
     atendimento.then(atendimentoCriado => res.status(200).json(atendimentoCriado).catch((error) => res.status(400).json(error.message)))
 })

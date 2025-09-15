@@ -20,8 +20,6 @@ class AtendimentosModel {
     criar(atendimento){
         const sql = `INSERT INTO ATENDIMENTOS SET ?`
        return new Promise ((resolve,reject) => {
-
-        
            conexao.query(sql,atendimento, (error,resposta) => {
                if(error){
                    console.log("erro ao listar")
@@ -33,6 +31,37 @@ class AtendimentosModel {
            })
        })
     }
+
+    atualizar(id, dados) {
+    const sql = "UPDATE atendimentos SET ? WHERE id = ?";
+    return new Promise((resolve, reject) => {
+        conexao.query(sql, [dados, id], (error, resposta) => {
+            if (error) {
+                console.log("Erro ao atualizar:", error);
+                reject(error);
+            } else {
+                console.log(`Atendimento ${id} atualizado com sucesso ✅`);
+                resolve(resposta);
+            }
+        });
+    });
+}
+
+deletar(id) {
+    const sql = "DELETE FROM atendimentos WHERE id = ?";
+    return new Promise((resolve, reject) => {
+        conexao.query(sql, id, (error, resposta) => {
+            if (error) {
+                console.log("Erro ao deletar:", error);
+                reject(error);
+            } else {
+                console.log(`Atendimento ${id} removido com sucesso ✅`);
+                resolve(resposta);
+            }
+        });
+    });
+}
+
 }
 
 module.exports = new AtendimentosModel();
