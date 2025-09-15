@@ -5,6 +5,9 @@ const rotas = require("./routes/index")
 const conexao = require("./routes/infraestrutura/conexao")
 const Tabelas = require("./routes/infraestrutura/tabela")
 
+app.use(express.json());
+app.use(express.urlencoded({extended:true}))
+
 Tabelas.init(conexao);
 app.use(rotas)
 
