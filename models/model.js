@@ -25,9 +25,10 @@ class AtendimentosModel {
            conexao.query(sql,atendimento, (error,resposta) => {
                if(error){
                    console.log("erro ao listar")
-                   return;
+                   reject(error)
                }
                console.log("deu bom listar")
+               resolve(resposta)
    
            })
        })
