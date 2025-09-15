@@ -21,7 +21,7 @@ this.conexao.query(sql,(error) => {
                 console.log(error.message)
                 return;
             }
-            console.log('subiu,show')
+            console.log('subiu o banco')
         
             })
         }
