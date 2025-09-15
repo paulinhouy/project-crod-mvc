@@ -16,7 +16,7 @@ router.get("/atendimento",(req,res) => {
 
 router.post("/atendimento",(req,res) => {
     const novoAtendimento = req.body;
-    const resposta = controllers.post(novoAtendimento)
+    const atendimento = controllers.post(novoAtendimento)
     res.send(resposta)
 })
 
