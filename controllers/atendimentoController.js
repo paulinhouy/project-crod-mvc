@@ -2,15 +2,15 @@ const atendimentoModel = require("../models/model.js")
 
 module.exports = {
     buscar: () => {
-        return atendimentoModel.listar();
+        return atendimentoModel.listar(); // ok, já existe
     },
     post: (novoAtendimento) => {
-        return "Criando atendimento...";
+        return atendimentoModel.criar(novoAtendimento); // usar "criar", não "post"
     },
-    atualizar: (id) => {
-        return `Atualizando atendimento ${id}...`;
+    atualizar: (id, dados) => {
+        return atendimentoModel.atualizar(id, dados); // precisa implementar no model.js
     },
     delete: (id) => {
-        return `Deletando atendimento ${id}...`;
+        return atendimentoModel.deletar(id); // precisa implementar no model.js
     }
 }
