@@ -27,9 +27,10 @@ class AtendimentosModel {
                if(error){
                    console.log("erro ao listar")
                    reject(error)
-               }
+               } else {
                console.log("deu bom listar")
                resolve(resposta)
+               }
    
            })
        })
@@ -65,5 +66,6 @@ deletar(id) {
 }
 
 }
+
 
 module.exports = new AtendimentosModel();
