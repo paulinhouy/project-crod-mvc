@@ -2,6 +2,7 @@ const {Router} = require('express');
 const router = Router();
 const controllers = require("../controllers/atendimentoController.js")
 const atendimentoModel = require("../models/model");
+const atendimentoController = require('../controllers/atendimentoController.js');
 
 //get post put delete
 
@@ -24,7 +25,9 @@ router.post("/atendimento",(req,res) => {
 
 router.put("/atendimento/:id",(req,res) => {
     const {id} = req.params;
-    const resposta = controllers.atualizar(id)
+    const atendimentoAtualizado = req.body;
+    const atendimento = atendimentoController.atualizar(atendimentoAtualizado,id)
+    atendimento.then((resultAtendimentoAtualizado) => res.status(200).json(resultAtendimentoAtualizado))
     res.send(resposta )
 })
 router.delete("/atendimento/:id",(req,res) => {
