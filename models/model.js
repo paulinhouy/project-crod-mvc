@@ -1,5 +1,8 @@
 const atendimento = require("../routes/index");
 const conexao = require("../routes/infraestrutura/conexao");
+const atendimentoModel = require('../models/model'); // ajuste o caminho se necessário
+
+
 
 class AtendimentosModel {
     listar() {
