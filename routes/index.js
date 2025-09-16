@@ -27,7 +27,7 @@ router.put("/atendimento/:id",(req,res) => {
     const {id} = req.params;
     const atendimentoAtualizado = req.body;
     const atendimento = atendimentoController.atualizar(atendimentoAtualizado,id)
-    atendimento.then((resultAtendimentoAtualizado) => res.status(200).json(resultAtendimentoAtualizado))
+    atendimento.then((resultAtendimentoAtualizado) => res.status(200).json(resultAtendimentoAtualizado)).catch ((error) => res.status(401).json(error.message))
     res.send(resposta )
 })
 router.delete("/atendimento/:id",(req,res) => {
