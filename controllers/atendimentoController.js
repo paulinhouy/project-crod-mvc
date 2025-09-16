@@ -1,4 +1,4 @@
-const atendimentoModel = require("../models/model.js")
+const atendimentoModel = require("../models/model")
 
 module.exports = {
     buscar: () => {
