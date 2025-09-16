@@ -35,21 +35,20 @@ class AtendimentosModel {
        })
     }
 
-    atualizar(id, dados) {
-    const sql = "UPDATE atendimentos SET ? WHERE id = ?";
-    return new Promise((resolve, reject) => {
-        conexao.query(sql, [dados, id], (error, resposta) => {
-            if (error) {
-                console.log("Erro ao atualizar:", error);
-                reject(error);
-            } else {
-                console.log(`Atendimento ${id} atualizado com sucesso ✅`);
-                resolve(resposta);
-            }
-        });
-    });
-}
-
+       atualizar(atendimentoAtualizado,id){
+        const sql = `UPDATE atendimentos SET ? WHERE id = ?`
+       return new Promise ((resolve,reject) => {
+           conexao.query(sql,[atendimentoAtualizado,id], (error,resposta) => {
+               if(error){
+                   console.log("erro ao listar")
+                   reject(error)
+               }
+               console.log("deu bom listar")
+               resolve(resposta)
+   
+           })
+       })
+    }
 deletar(id) {
     const sql = "DELETE FROM atendimentos WHERE id = ?";
     return new Promise((resolve, reject) => {
