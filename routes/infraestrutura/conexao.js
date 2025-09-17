@@ -16,4 +16,4 @@ conexao.connect((error) => {
     }
 });
 
-module.exports = conexao; // <- CORRETO
+module.exports = conexao; 
