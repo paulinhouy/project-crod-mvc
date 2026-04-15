@@ -1,0 +1,43 @@
+﻿<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>CRUD MVC em JavaScript</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1>CRUD MVC em JavaScript</h1>
+  </header>
+
+  <main class="container">
+    <section class="form-card">
+      <h2>Adicionar / Editar item</h2>
+      <form id="form">
+        <input type="hidden" id="id">
+
+        <label for="titulo">Título</label>
+        <input type="text" id="titulo" placeholder="Título do item" required>
+
+        <label for="descricao">Descrição</label>
+        <textarea id="descricao" placeholder="Descrição" required></textarea>
+
+        <label for="link">Link</label>
+        <input type="url" id="link" placeholder="https://example.com">
+
+        <button type="submit" id="submitButton">Salvar</button>
+      </form>
+    </section>
+
+    <section class="list-card">
+      <h2>Lista de itens</h2>
+      <div id="lista" class="lista"></div>
+    </section>
+  </main>
+
+  <script src="model.js"></script>
+  <script src="view.js"></script>
+  <script src="controller.js"></script>
+</body>
+</html>
